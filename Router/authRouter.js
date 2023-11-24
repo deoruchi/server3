@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
   try {
     if (!req.body) return res.json({ message: "Request body is missing" });
-    const body = req.body.name;
+    const body = req.body;
     console.log(body);
     const result = new model(body);
     const savedResult = await result.save();
