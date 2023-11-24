@@ -34,12 +34,13 @@ router.put("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
-  const id = req.params._id;
+  const id = req.params.id;
   try {
     await model.findByIdAndDelete(id);
-    res.send("╰(*°▽°*)╯");
   } catch (error) {
     res.send("error");
+  } finally {
+    res.send("╰(*°▽°*)╯");
   }
 });
 
